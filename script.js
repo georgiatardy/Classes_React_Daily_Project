@@ -18,11 +18,11 @@
 
 class Factory {
   constructor(make, location, airbags, abs, warranty) {
-    this.make = "Mazda"
-    this.location = "USA"
-    this.airbags = airbags
-    this.abs = abs
-    this.warranty = "60,000/3 years"
+    this.make = "Mazda";
+    this.location = "USA";
+    this.airbags = true;
+    this.abs = true;
+    this.warranty = "60,000/3 years";
     this.massBuild =
     function(quantity, options) {
       return "Building QUANTITY COLOR TRIM MODEL's", "Building 100 blue Touring CX-5's"
@@ -38,9 +38,6 @@ let factory = new Factory(); {
 }
 
 
-
-
-
 // CREATE A SUB-CLASS CALLED CAR
 // It should extend from Factory.
 // The constructor should have the following properties: model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof. The values should be specified when creating an instance of Car.
@@ -48,7 +45,18 @@ let factory = new Factory(); {
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
 
+class Car extends Factory {
+  constructor(make, location, airbags, abs, warranty, model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof) {
+    super(make, location, airbags, abs, warranty);
+    this.enginesize = "4";
+    this.navigation = true;
+    this.backupcamera = true;
+    this.warranty = "100,000 miles / 5 years"
+  }
+}
 
+let car = new Car();
+  console.log (car)
 
 
 // CREATE A SUB-CLASS CALLED SPORT
@@ -57,7 +65,19 @@ let factory = new Factory(); {
 // Sports cars should also have the following additional properties: moonroof (false), enginetype (gasoline), convertible (true), doors (2)
 // Write your code below:
 
+class Sport extends Car {
+  constructor(model, trim, transmission, top, color, seatstrim, audio, wheelstrim, moonroof, enginetype, convertible, doors) {
+    super(location, model, doors, color, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof)
+    this.moonroof = false;
+    this.enginetype = "gasoline";
+    this.convertible = true;
+    this.doors = "2";
 
+  }
+}
+
+let sport = new Sport ();
+console.log (sport);
 
 
 // CREATE A SUB-CLASS CALLED TRUCK
