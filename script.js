@@ -16,6 +16,28 @@
 
 // Create the Factory class bellow:
 
+class Factory {
+  constructor(make, location, airbags, abs, warranty) {
+    this.make = "Mazda"
+    this.location = "USA"
+    this.airbags = airbags
+    this.abs = abs
+    this.warranty = "60,000/3 years"
+    this.massBuild =
+    function(quantity, options) {
+      return "Building QUANTITY COLOR TRIM MODEL's", "Building 100 blue Touring CX-5's"
+    }
+    this.customerBuild =
+    function(color, options) {
+      return "Building one COLOR TRIM MODEL with the following options: OPTIONS", "Building one red Sport Mazda3 with the following options: heated seats, rear spoiler"
+    }
+  }
+}
+let factory = new Factory(); {
+  console.log(factory)
+}
+
+
 
 
 
